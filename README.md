@@ -65,22 +65,22 @@ gemini extensions install .
 
 To verify that the newly installed skill works correctly in your project workspace before preparing standard store listings:
 
-1. **Activate the skills:**
-   Start the interactive `gemini` console shell:
-   ```bash
-   gemini
-   ```
-   Once inside the interactive agent chat console, trigger the reload:
-   ```text
-   /skills reload
-   ```
-   *(To quit the active agent session, type `/quit`)*
+### Option 1: Interactive Agent Console
+Start the interactive `gemini` console shell:
+```bash
+gemini
+```
+Once inside the interactive agent chat console, trigger the reload and then run the skill:
+```text
+/skills reload
+Help me prepare my Chrome Web Store listing for my project.
+```
 
-2. **Trigger compliance checking directly from Zsh (Recommended):**
-   You can run a direct prompt evaluation from your normal macOS terminal prompt without opening interactive consoles:
-   ```bash
-   gemini run "Help me prepare my Chrome Web Store listing for my project."
-   ```
+### Option 2: Project-Wide Execution (Recommended)
+You can run the skill across your **entire project** directly from your normal macOS terminal (Zsh/Bash) without entering an interactive session. This is the fastest way to get a full audit:
+```bash
+gemini run "Help me prepare my Chrome Web Store listing for this project."
+```
 
 ---
 
