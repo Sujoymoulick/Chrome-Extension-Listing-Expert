@@ -1315,6 +1315,7 @@
                 <li><a href="#showcase" id="nav-documentary">Documentary</a></li>
                 <li><a href="#features" id="nav-features">Features</a></li>
                 <li><a href="#installation" id="nav-install">Installation</a></li>
+                <li><a href="#testing" id="nav-testing">Testing</a></li>
                 <li><a href="#compliance" id="nav-catalog">Compliance</a></li>
             </ul>
         </nav>
@@ -1656,7 +1657,97 @@
         <section class="installation-section" id="installation">
             <div class="showcase-title-area">
                 <h2>Installation Guide</h2>
-                <p>Deploy this skill to your Gemini workspace scope globally or locally using simple NPM commands.</p>
+                <p>Choose your preferred deployment method to integrate Extension Expart into your Gemini environment.</p>
+            </div>
+
+            <div class="grid-installation" style="grid-template-columns: 1fr; gap: 4rem;">
+                
+                <!-- NPM METHOD -->
+                <div style="border-bottom: var(--grid-line); padding-bottom: 3rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div class="install-step-num" style="border-bottom: none; color: var(--bauhaus-blue);">NPM</div>
+                        <h3 style="font-family: var(--font-headings); font-size: 1.8rem; text-transform: uppercase;">Direct Registry Install</h3>
+                    </div>
+                    
+                    <div class="install-step-card" style="margin-bottom: 0;">
+                        <div class="install-step-num">01</div>
+                        <div class="install-step-content" style="width: 100%;">
+                            <h3>Install via NPM (Recommended)</h3>
+                            <p>Install the published extension package globally to register it in your environment.</p>
+                            <div class="cmd-block">
+                                <span id="cmd-text-npm">npm i -g extention-expart</span>
+                                <button class="copy-trigger" onclick="copyCode('cmd-text-npm')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MANUAL METHOD -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div class="install-step-num" style="border-bottom: none; color: var(--bauhaus-red);">DEV</div>
+                        <h3 style="font-family: var(--font-headings); font-size: 1.8rem; text-transform: uppercase;">Manual Repository Setup</h3>
+                    </div>
+
+                    <div class="grid-installation" style="margin-top: 0;">
+                        <div class="install-col-left">
+                            <div class="install-step-card">
+                                <div class="install-step-num">01</div>
+                                <div class="install-step-content">
+                                    <h3>Step 1: Clone</h3>
+                                    <p>Clone the repository to your local machine:</p>
+                                    <div class="cmd-block">
+                                        <span id="cmd-text-m1">git clone https://github.com/sujoymoulick/chrome-dev-skill.git</span>
+                                        <button class="copy-trigger" onclick="copyCode('cmd-text-m1')">Copy</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="install-step-card">
+                                <div class="install-step-num">02</div>
+                                <div class="install-step-content">
+                                    <h3>Step 2: Navigate</h3>
+                                    <p>Move into the project directory:</p>
+                                    <div class="cmd-block">
+                                        <span id="cmd-text-m2">cd chrome-dev-skill</span>
+                                        <button class="copy-trigger" onclick="copyCode('cmd-text-m2')">Copy</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="install-col-right">
+                            <div class="install-step-card">
+                                <div class="install-step-num">03</div>
+                                <div class="install-step-content">
+                                    <h3>Step 3: Install Local</h3>
+                                    <p>Install the current folder as a custom extension:</p>
+                                    <div class="cmd-block">
+                                        <span id="cmd-text-m3">gemini extensions install .</span>
+                                        <button class="copy-trigger" onclick="copyCode('cmd-text-m3')">Copy</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="install-step-card">
+                                <div class="install-step-num">04</div>
+                                <div class="install-step-content">
+                                    <h3>Step 4: Verify</h3>
+                                    <p>Proceed to the verification section below to run your first audit.</p>
+                                    <a href="#testing" class="badge" style="text-decoration:none; margin-top:0.5rem; display:inline-block; background-color:var(--black-solid); color:white; border-color:var(--black-solid);">Testing Workflow</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTING WORKFLOW SECTION -->
+        <section class="installation-section" id="testing">
+            <div class="showcase-title-area">
+                <h2>Testing Workflow</h2>
+                <p>Verify that the newly installed skill works correctly in your project workspace before preparing standard store listings.</p>
             </div>
 
             <div class="grid-installation">
@@ -1664,50 +1755,35 @@
                     <div class="install-step-card">
                         <div class="install-step-num">01</div>
                         <div class="install-step-content">
-                            <h3>Install via NPM (Recommended)</h3>
-                            <p>Install the published extension package directly from NPM to register it in your environment.</p>
-                            <div class="cmd-block">
-                                <span id="cmd-text-1">npm i -g extention-expart</span>
-                                <button class="copy-trigger" onclick="copyCode('cmd-text-1')">Copy</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="install-step-card">
-                        <div class="install-step-num">02</div>
-                        <div class="install-step-content">
-                            <h3>Manual Repository Installation</h3>
-                            <p>Clone the repository files locally and scope the skill directly to your development project.</p>
+                            <h3>Option 1: Interactive Agent Console</h3>
+                            <p>Start the interactive <code>gemini</code> console shell:</p>
                             <div class="cmd-block" style="margin-bottom:1rem;">
-                                <span id="cmd-text-2">git clone https://github.com/ex-ex.git</span>
-                                <button class="copy-trigger" onclick="copyCode('cmd-text-2')">Copy</button>
+                                <span id="cmd-text-4">gemini</span>
+                                <button class="copy-trigger" onclick="copyCode('cmd-text-4')">Copy</button>
+                            </div>
+                            <p>Once inside, trigger the reload and then run the skill:</p>
+                            <div class="cmd-block" style="margin-bottom:1rem;">
+                                <span id="cmd-text-5">/skills reload</span>
+                                <button class="copy-trigger" onclick="copyCode('cmd-text-5')">Copy</button>
                             </div>
                             <div class="cmd-block">
-                                <span id="cmd-text-3">gemini extensions install ./ex-ex --scope workspace</span>
-                                <button class="copy-trigger" onclick="copyCode('cmd-text-3')">Copy</button>
+                                <span id="cmd-text-6">Help me prepare my Chrome Web Store listing for my project.</span>
+                                <button class="copy-trigger" onclick="copyCode('cmd-text-6')">Copy</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="install-col-right">
-                    <div class="logo-terminal-showcase">
-                        <div class="terminal-header" style="margin-bottom:0;">
-                            <div class="terminal-dots">
-                                <div class="dot dot-red"></div>
-                                <div class="dot dot-yellow"></div>
-                                <div class="dot dot-green"></div>
+                    <div class="install-step-card">
+                        <div class="install-step-num">02</div>
+                        <div class="install-step-content">
+                            <h3>Option 2: Project-Wide Execution (Recommended)</h3>
+                            <p>Run the skill across your entire project directly from your normal macOS terminal (Zsh/Bash) without entering an interactive session. This is the fastest way to get a full audit:</p>
+                            <div class="cmd-block">
+                                <span id="cmd-text-7">gemini run "Help me prepare my Chrome Web Store listing for this project."</span>
+                                <button class="copy-trigger" onclick="copyCode('cmd-text-7')">Copy</button>
                             </div>
-                            <div>Branded Welcome Script</div>
-                        </div>
-                        <div class="logo-text-art" style="color:var(--bauhaus-red);">
- > EXTENTION EXPART
-                        </div>
-                        <div class="logo-text-art" style="color:#d1d5db; font-size:0.8rem; border-top: 1px solid #2d3139; padding-top:10px;">
-Successfully installed Extention Expart!
-
-Run "/skills reload" in your Gemini CLI to activate.
-Ready to optimize listings and trademark compliance.
                         </div>
                     </div>
                 </div>
