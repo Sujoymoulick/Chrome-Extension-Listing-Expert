@@ -1,6 +1,6 @@
 {
   "name": "extention-expart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Gemini CLI extension to automate Chrome Web Store listings with 'Extention Expart' logic.",
   "main": "index.js",
   "keywords": [
