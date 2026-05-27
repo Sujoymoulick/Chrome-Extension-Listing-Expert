@@ -41,19 +41,21 @@ To run the local web server and open the Bauhaus showcase page (complete with in
 
 ## 🚀 Terminal Installation
 
-Deploy the extension package to your active workspace using standard NPM or manual git commands:
+Deploy the extension package to your active workspace using standard NPM or manual local linking commands:
 
-### Method A: Install package from the Registry (NPM)
+### Method A: Install via NPM (Recommended)
+You can now install the published package directly from the public registry globally:
 ```bash
-gemini extensions install extention-expart
+npm i -g extention-expart
 ```
 
-### Method B: Manual Git Clone & Directory link
+### Method B: Local Repository Development Installation
+Clone the repository locally and install the local folder as a Gemini extension:
 ```bash
 # Clone the repository locally
 git clone https://github.com/sujoymoulick/chrome-dev-skill.git
 
-# Install the local folder as a Gemini extension
+# Install the local folder directly as an extension
 gemini extensions install .
 ```
 

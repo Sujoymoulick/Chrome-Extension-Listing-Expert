@@ -1407,7 +1407,7 @@
                         <!-- Simulated Line 1 -->
                         <div class="terminal-line" id="line-0">
                             <span class="prompt-symbol">&gt;</span>
-                            <span class="text-cmd">gemini extensions install ./extention-expart --scope workspace</span>
+                            <span class="text-cmd">npm i -g extention-expart</span>
                         </div>
 
                         <!-- Simulated Line 2 -->
@@ -1664,10 +1664,10 @@
                     <div class="install-step-card">
                         <div class="install-step-num">01</div>
                         <div class="install-step-content">
-                            <h3>Install NPM Extension (Global)</h3>
-                            <p>Retrieve the skill package from the CLI registry globally to apply it to any workspace.</p>
+                            <h3>Install via NPM (Recommended)</h3>
+                            <p>Install the published extension package directly from NPM to register it in your environment.</p>
                             <div class="cmd-block">
-                                <span id="cmd-text-1">gemini extensions install extention-expart</span>
+                                <span id="cmd-text-1">npm i -g extention-expart</span>
                                 <button class="copy-trigger" onclick="copyCode('cmd-text-1')">Copy</button>
                             </div>
                         </div>
@@ -2102,7 +2102,7 @@ Ready to optimize listings and trademark compliance.
 
     // Subtitles corresponding to terminal lines
     const subtitles = [
-        "Initializing installation of Extension Expart local skill package...",
+        "Initializing installation of the published Extension Expart NPM package...",
         "Scanning extension manifest parameters from configuration metadata...",
         "Success! Extension Expart successfully compiled and scope registered.",
         "Executing target listing audit request to prepare store submissions...",
