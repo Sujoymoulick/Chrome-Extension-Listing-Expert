@@ -14,7 +14,11 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "dev": "http-server -p 8080",
     "postinstall": "node scripts/display_logo.js"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   },
   "files": [
     "skills/",
