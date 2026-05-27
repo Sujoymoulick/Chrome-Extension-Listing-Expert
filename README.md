@@ -14,6 +14,10 @@
 
 > A senior product manager and branding compliance officer in your command line, automated by the Gemini CLI agent.
 
+**🔗 [View Live Documentation & CLI Simulator](https://sujoymoulick.github.io/Chrome-Extension-Listing-Expert/)**
+
+---
+
 **Extention Expart** is a highly specialized local skill package designed for the Gemini CLI agent framework. It automates the generation of compliant, high-performing Chrome Web Store listing metadata (titles, summaries, and descriptions), audits manifest permissions, and creates graphical layout specifications according to Google's strict guidelines.
 
 ---
