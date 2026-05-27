@@ -22,27 +22,6 @@
 
 ---
 
-## 🎨 Static Bauhaus Landing Page & Simulator
-
-The project includes an **award-winning, Bauhaus-style static landing page** located at `index.html`. It serves as a visual showcase for the skill and contains a **high-fidelity interactive video simulator** of a CLI run!
-
-### Local Testing with NPM
-
-To run the local web server and open the Bauhaus showcase page (complete with interactive mute controls, volume slider, and dynamic sound effects synthesized using the standard **Web Audio API**):
-
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-2. **Start the local server:**
-   ```bash
-   npm run dev
-   ```
-3. **Open in browser:**
-   Open **[http://localhost:8080](http://localhost:8080)** in Google Chrome.
-
----
-
 ## 🚀 Terminal Installation
 
 Deploy the extension package to your active workspace using standard NPM or manual local linking commands:
