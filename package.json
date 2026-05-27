@@ -1,0 +1,27 @@
+{
+  "name": "extention-expart",
+  "version": "1.0.0",
+  "description": "A Gemini CLI extension to automate Chrome Web Store listings with 'Extention Expart' logic.",
+  "main": "index.js",
+  "keywords": [
+    "gemini-cli-extension",
+    "gemini-skill",
+    "chrome-extension",
+    "web-store",
+    "listing"
+  ],
+  "author": "Sujoy Moulick",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/display_logo.js"
+  },
+  "files": [
+    "skills/",
+    "scripts/",
+    "gemini-extension.json"
+  ],
+  "dependencies": {
+    "oh-my-logo": "^0.5.0"
+  }
+}

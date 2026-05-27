@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extension Expart — Bauhaus Showcase & Web Store Compliance Guide</title>
+    <meta name="description" content="Automate your Chrome Web Store presence with official compliance and branding guidance. Built in a premium Bauhaus design.">
+    
+    <!-- Load Bauhaus Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- BAUHAUS CORE DESIGN SYSTEM --- */
+        :root {
+            /* Palette representing classic Bauhaus design catalog */
+            --bg-cream: #F5F2EB;
+            --black-solid: #111111;
+            --black-border: #111111;
+            --white-solid: #FFFFFF;
+            
+            /* Primary Bauhaus Accents */
+            --bauhaus-red: #D32F2F;
+            --bauhaus-blue: #1976D2;
+            --bauhaus-yellow: #FBC02D;
+            --bauhaus-pink: #EC407A;
+            --bauhaus-green: #2E7D32;
+            --bauhaus-cyan: #00BCD4;
+            
+            /* Typography Scale */
+            --font-headings: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+            
+            --border-width: 1px;
+            --grid-line: 1px solid var(--black-border);
+            --grid-line-thick: 3px solid var(--black-border);
+        }
+
+        /* Base Resets & Structure */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-cream);
+            color: var(--black-solid);
+            line-height: 1.5;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- THE GRID FRAMEWORK --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Left Editorial Column */
+        .side-editorial {
+            border-right: var(--grid-line-thick);
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            background-color: var(--bg-cream);
+        }
+
+        .brand-logo-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Custom Bauhaus Block Lettering Logo */
+        .bauhaus-logo {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4px;
+            width: 70px;
+            height: 70px;
+            margin-bottom: 1rem;
+        }
+
+        .logo-block {
+            border: var(--grid-line);
+            aspect-ratio: 1;
+        }
+        .block-red { background-color: var(--bauhaus-red); }
+        .block-blue { background-color: var(--bauhaus-blue); border-radius: 50% 0 0 0; }
+        .block-yellow { background-color: var(--bauhaus-yellow); border-radius: 0 0 50% 50%; }
+        .block-black { background-color: var(--black-solid); }
+
+        .side-title {
+            font-family: var(--font-headings);
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 2rem;
+        }
+
+        .side-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .side-nav a {
+            color: var(--black-solid);
+            text-decoration: none;
+            font-family: var(--font-headings);
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .side-nav a::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: transparent;
+            border: 1px solid var(--black-solid);
+            border-radius: 50%;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+
+        .side-nav a:hover::before {
+            background-color: var(--bauhaus-red);
+            border-color: var(--bauhaus-red);
+            transform: scale(1.5);
+        }
+
+        .side-nav a:hover {
+            color: var(--bauhaus-red);
+            padding-left: 5px;
+        }
+
+        .side-footer {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+        }
+
+        /* Main Scrollable Area */
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- THE BANNER SPECTRUM --- */
+        .color-strip-banner {
+            display: flex;
+            height: 12px;
+            width: 100%;
+            border-bottom: var(--grid-line);
+        }
+        .strip-cyan { background-color: var(--bauhaus-cyan); flex: 1; }
+        .strip-blue { background-color: var(--bauhaus-blue); flex: 1; }
+        .strip-red { background-color: var(--bauhaus-red); flex: 1; }
+        .strip-yellow { background-color: var(--bauhaus-yellow); flex: 1; }
+        .strip-green { background-color: var(--bauhaus-green); flex: 1; }
+        .strip-pink { background-color: var(--bauhaus-pink); flex: 1; }
+
+        /* --- SECTION STRUCTURE --- */
+        .bauhaus-section {
+            border-bottom: var(--grid-line);
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        /* Asymmetric Header Layout */
+        .hero-section {
+            padding: 4rem 3rem 3rem 3rem;
+            position: relative;
+            background-color: var(--bg-cream);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 2rem;
+        }
+
+        .hero-headline-group {
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-block;
+            border: var(--grid-line);
+            background-color: var(--bauhaus-yellow);
+            color: var(--black-solid);
+            padding: 0.3rem 0.8rem;
+            font-family: var(--font-headings);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: var(--font-headings);
+            font-size: 4.8rem;
+            font-weight: 700;
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+            margin-bottom: 1.5rem;
+            color: var(--black-solid);
+        }
+
+        .philosophical-quote {
+            font-family: var(--font-headings);
+            font-size: 1.35rem;
+            font-weight: 500;
+            line-height: 1.3;
+            max-width: 600px;
+            border-top: var(--grid-line-thick);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            text-transform: uppercase;
+        }
+
+        .hero-graphics-column {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Bauhaus Abstract Circle/Wireframe Overlay */
+        .bauhaus-circles-graphic {
+            width: 250px;
+            height: 250px;
+            border: var(--grid-line);
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .bauhaus-circles-graphic::after {
+            content: '';
+            width: 170px;
+            height: 170px;
+            border: 1px dashed var(--black-solid);
+            border-radius: 50%;
+            position: absolute;
+        }
+        .bauhaus-circles-graphic::before {
+            content: '';
+            width: 90px;
+            height: 90px;
+            background-color: var(--bauhaus-red);
+            border: var(--grid-line);
+            border-radius: 50%;
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            z-index: 1;
+        }
+
+        .diagonal-line {
+            position: absolute;
+            width: 320px;
+            height: 1px;
+            background-color: var(--black-solid);
+            transform: rotate(-45deg);
+            z-index: 0;
+        }
+
+        /* --- THE DOCUMENTARY SHOWCASE (HIGH-FIDELITY PLAYER) --- */
+        .showcase-header {
+            border-bottom: var(--grid-line);
+            padding: 2.5rem 3rem;
+            background-color: var(--white-solid);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .showcase-title-area h2 {
+            font-family: var(--font-headings);
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: -1.5px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .showcase-title-area p {
+            font-size: 1.05rem;
+            color: #555;
+            max-width: 550px;
+        }
+
+        .player-metadata {
+            text-align: right;
+            font-family: var(--font-headings);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-left: var(--grid-line-thick);
+            padding-left: 1.5rem;
+        }
+
+        .player-metadata span {
+            color: var(--bauhaus-red);
+        }
+
+        .documentary-player-section {
+            display: grid;
+            grid-template-columns: 1.9fr 1.1fr;
+            background-color: var(--white-solid);
+            border-bottom: var(--grid-line);
+        }
+
+        /* The Widescreen Interactive Video Screen */
+        .player-viewport {
+            border-right: var(--grid-line);
+            background-color: #111;
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Static Poster / Overlay */
+        .player-poster {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .poster-shading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(1px);
+        }
+
+        .play-button-circle {
+            position: relative;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: var(--bauhaus-red);
+            border: 2px solid var(--white-solid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 11;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .play-button-circle:hover {
+            transform: scale(1.1);
+            background-color: var(--bauhaus-yellow);
+            border-color: var(--black-solid);
+        }
+
+        .play-button-circle:hover svg path {
+            fill: var(--black-solid);
+        }
+
+        .play-button-circle svg {
+            margin-left: 6px;
+        }
+
+        /* Simulated HTML/CSS Terminal Screen */
+        .terminal-display {
+            width: 100%;
+            height: 100%;
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: #d1d5db;
+            overflow-y: auto;
+            position: relative;
+            background-color: #0d0e12;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-bottom: 4rem; /* padding for captions overlay */
+        }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #2d3139;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            color: #4b5563;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dot-red { background-color: #ef4444; }
+        .dot-yellow { background-color: #f59e0b; }
+        .dot-green { background-color: #10b981; }
+
+        .terminal-line {
+            display: flex;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+        }
+
+        .terminal-line.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .prompt-symbol {
+            color: var(--bauhaus-cyan);
+            font-weight: bold;
+            user-select: none;
+        }
+
+        .text-cmd {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .text-success { color: #10b981; }
+        .text-warning { color: #f59e0b; }
+        .text-error { color: #ef4444; }
+        .text-info { color: #3b82f6; }
+        .text-dim { color: #6b7280; }
+
+        /* Sync Subtitle Overlay */
+        .captions-overlay {
+            position: absolute;
+            bottom: 3.5rem;
+            left: 5%;
+            width: 90%;
+            background-color: rgba(17, 17, 17, 0.85);
+            border-left: 4px solid var(--bauhaus-red);
+            border-radius: 0 4px 4px 0;
+            padding: 0.8rem 1.2rem;
+            color: var(--white-solid);
+            font-family: var(--font-headings);
+            font-size: 1.05rem;
+            font-weight: 500;
+            z-index: 5;
+            display: none;
+            animation: captionFadeIn 0.3s ease;
+        }
+
+        @keyframes captionFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Interactive Video Controls */
+        .player-controls {
+            height: 48px;
+            background-color: var(--black-solid);
+            display: flex;
+            align-items: center;
+            padding: 0 1.2rem;
+            gap: 1.2rem;
+            z-index: 6;
+            color: var(--white-solid);
+            user-select: none;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: var(--white-solid);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .control-btn:hover {
+            color: var(--bauhaus-yellow);
+            transform: scale(1.15);
+        }
+
+        /* Timeline Slider styling */
+        .timeline-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .timeline-slider {
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #444;
+            height: 6px;
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .timeline-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--bauhaus-red);
+            border: 2px solid var(--white-solid);
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            transition: transform 0.1s ease;
+        }
+
+        .timeline-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.3);
+            background: var(--bauhaus-yellow);
+        }
+
+        .time-counter {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        /* Volume slider styling */
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .volume-slider {
+            width: 70px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #444;
+            height: 4px;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--white-solid);
+            cursor: pointer;
+        }
+
+        /* Right Panel: Interactive Chapters */
+        .player-chapters-panel {
+            display: flex;
+            flex-direction: column;
+            border-top: none;
+            background-color: var(--white-solid);
+        }
+
+        .chapters-header {
+            background-color: var(--black-solid);
+            color: var(--white-solid);
+            padding: 0.9rem 1.5rem;
+            font-family: var(--font-headings);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .chapters-header span {
+            color: var(--bauhaus-yellow);
+        }
+
+        .chapters-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            max-height: calc(100% - 40px);
+        }
+
+        .chapter-item {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1.1rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            background-color: var(--white-solid);
+        }
+
+        .chapter-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background-color: var(--bauhaus-blue);
+            transition: width 0.25s ease;
+        }
+
+        .chapter-item.active::before {
+            width: 6px;
+        }
+
+        .chapter-item.active {
+            background-color: #f9fafb;
+        }
+
+        .chapter-item:hover {
+            background-color: #f3f4f6;
+            padding-left: 1.8rem;
+        }
+
+        .chapter-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .chapter-number {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #9ca3af;
+        }
+
+        .chapter-item.active .chapter-number {
+            color: var(--bauhaus-blue);
+        }
+
+        .chapter-title {
+            font-family: var(--font-headings);
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            color: var(--black-solid);
+        }
+
+        .chapter-duration {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #6b7280;
+            border: var(--grid-line);
+            padding: 2px 6px;
+            border-radius: 4px;
+            background-color: var(--bg-cream);
+        }
+
+        /* --- FEATURES ASYMMETRIC GRID --- */
+        .section-headline {
+            border-bottom: var(--grid-line);
+            padding: 3rem;
+            background-color: var(--bg-cream);
+        }
+
+        .section-headline h2 {
+            font-family: var(--font-headings);
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: var(--grid-line);
+            background-color: var(--black-solid);
+            gap: var(--border-width);
+        }
+
+        /* Bauhaus Shifting Card */
+        .feature-card {
+            background-color: var(--white-solid);
+            padding: 3rem 2.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            aspect-ratio: 1/1;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Shift offset backgrounds on hover */
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+        
+        .card-red:hover { background-color: var(--bauhaus-red); color: var(--white-solid); }
+        .card-blue:hover { background-color: var(--bauhaus-blue); color: var(--white-solid); }
+        .card-yellow:hover { background-color: var(--bauhaus-yellow); }
+        .card-pink:hover { background-color: var(--bauhaus-pink); color: var(--white-solid); }
+        .card-green:hover { background-color: var(--bauhaus-green); color: var(--white-solid); }
+        .card-cyan:hover { background-color: var(--bauhaus-cyan); }
+
+        .feature-card h3 {
+            font-family: var(--font-headings);
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .feature-card:hover p {
+            opacity: 0.95;
+        }
+
+        .feature-icon-geom {
+            width: 40px;
+            height: 40px;
+            border: var(--grid-line);
+            align-self: flex-start;
+            margin-bottom: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .card-red .feature-icon-geom { background-color: var(--bauhaus-red); border-radius: 50%; }
+        .card-blue .feature-icon-geom { background-color: var(--bauhaus-blue); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); border: none;}
+        .card-yellow .feature-icon-geom { background-color: var(--bauhaus-yellow); border-radius: 0 0 100% 0; }
+        .card-pink .feature-icon-geom { background-color: var(--bauhaus-pink); border-radius: 50% 50% 0 0; }
+        .card-green .feature-icon-geom { background-color: var(--bauhaus-green); transform: rotate(45deg); }
+        .card-cyan .feature-icon-geom { background-color: var(--bauhaus-cyan); border-radius: 50% 0 50% 0; }
+
+        .feature-card:hover .feature-icon-geom {
+            background-color: var(--white-solid);
+            border-color: var(--black-solid);
+            transform: rotate(180deg) scale(1.15);
+        }
+
+        /* --- THE INSTALLATION SECTION --- */
+        .installation-section {
+            padding: 4rem 3rem;
+            background-color: var(--bg-cream);
+            border-bottom: var(--grid-line);
+        }
+
+        .grid-installation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .install-col-left {
+            border-right: var(--grid-line);
+            padding-right: 3rem;
+        }
+
+        .install-step-card {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            align-items: flex-start;
+        }
+
+        .install-step-num {
+            font-family: var(--font-headings);
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--bauhaus-red);
+            border-bottom: var(--grid-line-thick);
+            padding-bottom: 4px;
+        }
+
+        .install-step-content h3 {
+            font-family: var(--font-headings);
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .install-step-content p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        /* Command Box / Interactive Copyable Code */
+        .cmd-block {
+            background-color: var(--black-solid);
+            border: var(--grid-line);
+            border-radius: 4px;
+            padding: 0.8rem 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: #fff;
+            position: relative;
+        }
+
+        .copy-trigger {
+            background-color: #333;
+            border: none;
+            color: var(--white-solid);
+            padding: 4px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-family: var(--font-headings);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+
+        .copy-trigger:hover {
+            background-color: var(--bauhaus-yellow);
+            color: var(--black-solid);
+        }
+
+        /* Installer Showcase terminal */
+        .logo-terminal-showcase {
+            background-color: #0d0e12;
+            border: var(--grid-line-thick);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .logo-text-art {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            white-space: pre;
+            line-height: 1.2;
+            color: var(--white-solid);
+        }
+
+        /* --- THE COMPLIANCE CATALOG --- */
+        .catalog-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            background-color: var(--white-solid);
+            border-bottom: var(--grid-line);
+        }
+
+        .catalog-tabs {
+            display: flex;
+            border-bottom: var(--grid-line);
+            background-color: var(--bg-cream);
+        }
+
+        .tab-btn {
+            border: none;
+            background: none;
+            border-right: var(--grid-line);
+            padding: 1.2rem 2.5rem;
+            font-family: var(--font-headings);
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: transparent;
+        }
+
+        .tab-btn.active {
+            background-color: var(--white-solid);
+            padding-bottom: calc(1.2rem + 1px);
+        }
+
+        .tab-btn.active::after {
+            background-color: var(--bauhaus-red);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background-color: #eae7df;
+        }
+
+        .catalog-content-panel {
+            padding: 3.5rem 3rem;
+            display: none;
+            animation: tabFade 0.4s ease;
+        }
+
+        .catalog-content-panel.active {
+            display: block;
+        }
+
+        @keyframes tabFade {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .catalog-col h3 {
+            font-family: var(--font-headings);
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid var(--bauhaus-blue);
+            padding-left: 0.8rem;
+        }
+
+        .catalog-col-red h3 { border-color: var(--bauhaus-red); }
+        .catalog-col-yellow h3 { border-color: var(--bauhaus-yellow); }
+        .catalog-col-green h3 { border-color: var(--bauhaus-green); }
+
+        .catalog-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .catalog-list li {
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .catalog-list li strong {
+            font-family: var(--font-headings);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .catalog-list li::before {
+            content: '■';
+            font-size: 0.7rem;
+            color: var(--bauhaus-red);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .catalog-col-blue .catalog-list li::before { color: var(--bauhaus-blue); }
+        .catalog-col-yellow .catalog-list li::before { color: var(--bauhaus-yellow); }
+        .catalog-col-green .catalog-list li::before { color: var(--bauhaus-green); }
+
+        /* Floating Toast notifications */
+        #toast-notification {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--black-solid);
+            color: var(--white-solid);
+            padding: 0.8rem 1.5rem;
+            font-family: var(--font-headings);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 5px solid var(--bauhaus-yellow);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 100;
+        }
+
+        #toast-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* --- FOOTER --- */
+        footer.main-footer {
+            background-color: var(--black-solid);
+            color: #888;
+            padding: 4rem 3rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            font-size: 0.9rem;
+        }
+
+        footer.main-footer h4 {
+            font-family: var(--font-headings);
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--white-solid);
+            margin-bottom: 1.2rem;
+        }
+
+        footer.main-footer ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        footer.main-footer a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer.main-footer a:hover {
+            color: var(--white-solid);
+        }
+
+        .footer-copyright {
+            grid-column: span 3;
+            border-top: 1px solid #222;
+            padding-top: 2rem;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- RESPONSIVE DESIGNS --- */
+        @media (max-width: 1100px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            .side-editorial {
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: var(--grid-line-thick);
+                flex-direction: row;
+                align-items: center;
+                padding: 1.5rem 3rem;
+            }
+            .brand-logo-container {
+                flex-direction: row;
+                align-items: center;
+            }
+            .bauhaus-logo {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 0;
+            }
+            .side-title {
+                margin-bottom: 0;
+                font-size: 1.4rem;
+            }
+            .side-nav ul {
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+            .side-footer {
+                display: none;
+            }
+            .documentary-player-section {
+                grid-template-columns: 1fr;
+            }
+            .player-viewport {
+                border-right: none;
+                border-bottom: var(--grid-line);
+            }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .feature-card {
+                aspect-ratio: auto;
+                min-height: 250px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                padding: 3rem 1.5rem;
+            }
+            h1 {
+                font-size: clamp(2.4rem, 9vw, 4rem);
+                letter-spacing: -1.5px;
+            }
+            .showcase-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+                padding: 2rem 1.5rem;
+            }
+            .player-metadata {
+                text-align: left;
+                border-left: none;
+                border-top: var(--grid-line-thick);
+                padding-left: 0;
+                padding-top: 1rem;
+                width: 100%;
+            }
+            .grid-installation {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .install-col-left {
+                border-right: none;
+                padding-right: 0;
+            }
+            .catalog-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .catalog-tabs {
+                flex-direction: column;
+            }
+            .tab-btn {
+                border-right: none;
+                border-bottom: var(--grid-line);
+                width: 100%;
+                text-align: left;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            footer.main-footer {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-copyright {
+                grid-column: span 1;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Compact tablet and phone layout folding rules (width < 600px) */
+        @media (max-width: 600px) {
+            .side-editorial {
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1.2rem;
+            }
+            .side-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            .hero-section {
+                padding: 2.5rem 1rem;
+            }
+            .bauhaus-circles-graphic {
+                width: 180px;
+                height: 180px;
+            }
+            .bauhaus-circles-graphic::after {
+                width: 120px;
+                height: 120px;
+            }
+            .bauhaus-circles-graphic::before {
+                width: 60px;
+                height: 60px;
+            }
+            .diagonal-line {
+                width: 220px;
+            }
+            .terminal-display {
+                font-size: 0.8rem;
+                padding: 1rem;
+            }
+            .logo-text-art {
+                font-size: 0.65rem;
+                overflow-x: auto;
+            }
+            .catalog-content-panel {
+                padding: 2rem 1rem;
+            }
+            .installation-section {
+                padding: 2.5rem 1rem;
+            }
+        }
+
+        /* Smaller mobile adjustments to prevent any element clipping (width < 450px) */
+        @media (max-width: 450px) {
+            .volume-slider {
+                display: none;
+            }
+            .volume-control {
+                gap: 0;
+            }
+            .player-controls {
+                gap: 0.6rem;
+                padding: 0 0.8rem;
+            }
+            .time-counter {
+                font-size: 0.75rem;
+            }
+            .captions-overlay {
+                font-size: 0.9rem;
+                bottom: 3.8rem;
+                width: 92%;
+                left: 4%;
+            }
+            .chapter-item {
+                padding: 0.8rem 1rem;
+            }
+            .chapter-title {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid-container">
+    
+    <!-- LEFT SIDE EDITORIAL COLUMN -->
+    <aside class="side-editorial" id="navigation-sidebar">
+        <div class="brand-logo-container">
+            <div class="bauhaus-logo">
+                <div class="logo-block block-red"></div>
+                <div class="logo-block block-blue"></div>
+                <div class="logo-block block-yellow"></div>
+                <div class="logo-block block-black"></div>
+            </div>
+            <div>
+                <h2 class="side-title">EX / EX</h2>
+            </div>
+        </div>
+        
+        <nav class="side-nav">
+            <ul>
+                <li><a href="#hero" id="nav-home">Home</a></li>
+                <li><a href="#showcase" id="nav-documentary">Documentary</a></li>
+                <li><a href="#features" id="nav-features">Features</a></li>
+                <li><a href="#installation" id="nav-install">Installation</a></li>
+                <li><a href="#compliance" id="nav-catalog">Compliance</a></li>
+            </ul>
+        </nav>
+        
+        <div class="side-footer">
+            <p>BAUHAUS 1919 — 2026</p>
+            <p>FORM FOLLOWS FUNCTION</p>
+        </div>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT -->
+    <main>
+        
+        <!-- PALETTE SPECTRUM STRIP -->
+        <div class="color-strip-banner">
+            <div class="strip-cyan"></div>
+            <div class="strip-blue"></div>
+            <div class="strip-red"></div>
+            <div class="strip-yellow"></div>
+            <div class="strip-green"></div>
+            <div class="strip-pink"></div>
+        </div>
+        
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="hero">
+            <div class="hero-headline-group">
+                <span class="badge">Gemini CLI Skill</span>
+                <h1>Extension<br>Expart</h1>
+                <p class="philosophical-quote">
+                    "True design is where efficiency serves code. You are not here to copy-paste, but to craft extension listings with intention and compliance."
+                </p>
+            </div>
+            
+            <div class="hero-graphics-column">
+                <div class="diagonal-line"></div>
+                <div class="bauhaus-circles-graphic">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="var(--black-solid)" />
+                        <path d="M12 8v8M8 12h8" stroke="var(--black-solid)" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCUMENTARY SHOWCASE SECTION -->
+        <section class="showcase-section" id="showcase">
+            <div class="showcase-header">
+                <div class="showcase-title-area">
+                    <h2>The Documentary</h2>
+                    <p>Watch a full simulated run of Extention Expart resolving brand guidelines, validating manifest criteria, and ensuring trademark compliance.</p>
+                </div>
+                <div class="player-metadata">
+                    <p>Status: <span>Static Demo Loaded</span></p>
+                    <p>Format: <span>Interactive CLI Recording</span></p>
+                </div>
+            </div>
+
+            <div class="documentary-player-section">
+                <!-- Video Screen -->
+                <div class="player-viewport" id="video-viewport">
+                    
+                    <!-- Cover poster loaded dynamically from absolute path -->
+                    <div class="player-poster" id="player-poster">
+                        <div class="poster-shading"></div>
+                        
+                        <!-- Embedded Generated Bauhaus Image -->
+                        <img src="file:///Users/sujoymoulick/.gemini/antigravity-ide/brain/7a9fccaf-b402-422c-97d9-480498b28d8d/documentary_cover_1779900575575.png" 
+                             alt="The Code Of Design Poster" 
+                             style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:-1;">
+                             
+                        <button class="play-button-circle" id="play-poster-btn" aria-label="Play documentary">
+                            <svg width="28" height="32" viewBox="0 0 24 28" fill="none">
+                                <path d="M4 2.69v22.62c0 1.55 1.7 2.5 3.01 1.68l16.16-11.31c1.17-.82 1.17-2.54 0-3.36L7.01 1c-1.31-.82-3.01.13-3.01 1.69z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Terminal Output console (visible when playing) -->
+                    <div class="terminal-display" id="terminal-screen">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="dot dot-red"></div>
+                                <div class="dot dot-yellow"></div>
+                                <div class="dot dot-green"></div>
+                            </div>
+                            <div>Gemini CLI Session — Extention Expart</div>
+                            <div style="font-family:var(--font-headings); font-weight:bold;">EX / EX</div>
+                        </div>
+
+                        <!-- Simulated Line 1 -->
+                        <div class="terminal-line" id="line-0">
+                            <span class="prompt-symbol">&gt;</span>
+                            <span class="text-cmd">gemini extensions install ./extention-expart --scope workspace</span>
+                        </div>
+
+                        <!-- Simulated Line 2 -->
+                        <div class="terminal-line" id="line-1">
+                            <span class="prompt-symbol"> </span>
+                            <span class="text-dim">Scanning extension package configuration from gemini-extension.json...</span>
+                        </div>
+
+                        <!-- Simulated Line 3 -->
+                        <div class="terminal-line" id="line-2">
+                            <span class="prompt-symbol">✔</span>
+                            <span class="text-success">Success: Loaded skill 'extention-expart' (v1.0.0).</span>
+                        </div>
+
+                        <!-- Simulated Line 4 -->
+                        <div class="terminal-line" id="line-3">
+                            <span class="prompt-symbol">&gt;</span>
+                            <span class="text-cmd">gemini run "Help me prepare my Chrome Web Store listing for my project."</span>
+                        </div>
+
+                        <!-- Simulated Line 5 -->
+                        <div class="terminal-line" id="line-4">
+                            <span class="prompt-symbol"> </span>
+                            <span class="text-info">Step 1: Gathering Project Metadata...</span>
+                        </div>
+
+                        <!-- Simulated Line 6 -->
+                        <div class="terminal-line" id="line-5">
+                            <span class="prompt-symbol"> </span>
+                            <span class="text-dim">Analyzing project files. Found: manifest.json, background.js, popup.html.</span>
+                        </div>
+
+                        <!-- Simulated Line 7 -->
+                        <div class="terminal-line" id="line-6">
+                            <span class="prompt-symbol"> </span>
+                            <span class="text-info">Step 2: Checking Trademark Compliance...</span>
+                        </div>
+
+                        <!-- Simulated Line 8 -->
+                        <div class="terminal-line" id="line-7">
+                            <span class="prompt-symbol">⚠</span>
+                            <span class="text-warning">Trademark Warning: Proposed title "Google Chrome Session Manager" violates guidelines.</span>
+                        </div>
+
+                        <!-- Simulated Line 9 -->
+                        <div class="terminal-line" id="line-8">
+                            <span class="prompt-symbol"> </span>
+                            <span class="text-dim">Trademark rule: Do not start names with "Google" or "Chrome". Use compatible suffixes.</span>
+                        </div>
+
+                        <!-- Simulated Line 10 -->
+                        <div class="terminal-line" id="line-9">
+                            <span class="prompt-symbol">✔</span>
+                            <span class="text-success">Generated Compliant Title: "Session Manager for Google Chrome™" (Attribution provided)</span>
+                        </div>
+
+                        <!-- Simulated Line 11 -->
+                        <div class="terminal-line" id="line-10">
+                            <span class="prompt-symbol"> </span>
+                            <span class="text-info">Step 3: Auditing Graphic Asset Requirements...</span>
+                        </div>
+
+                        <!-- Simulated Line 12 -->
+                        <div class="terminal-line" id="line-11">
+                            <span class="prompt-symbol"> </span>
+                            <span class="text-dim">Checking icon size... Size is 128x128. Padding is 16px transparent per side. Front-facing: Yes.</span>
+                        </div>
+
+                        <!-- Simulated Line 13 -->
+                        <div class="terminal-line" id="line-12">
+                            <span class="prompt-symbol">✔</span>
+                            <span class="text-success">Graphic Validation: Icon, Promo Tile, and Marquee requirements generated successfully.</span>
+                        </div>
+
+                        <!-- Simulated Line 14 -->
+                        <div class="terminal-line" id="line-13">
+                            <span class="prompt-symbol"> </span>
+                            <span class="text-info">Step 4: Scanning Manifest and Lifecycle compliance...</span>
+                        </div>
+
+                        <!-- Simulated Line 15 -->
+                        <div class="terminal-line" id="line-14">
+                            <span class="prompt-symbol">✔</span>
+                            <span class="text-success">Manifest Check: Using Manifest V3 correctly. BFCache checked (no 'unload' handlers).</span>
+                        </div>
+
+                        <!-- Simulated Line 16 -->
+                        <div class="terminal-line" id="line-15">
+                            <span class="prompt-symbol"> </span>
+                            <span class="text-dim">Preparing formatted output...</span>
+                        </div>
+
+                        <!-- Simulated Line 17 -->
+                        <div class="terminal-line" id="line-16">
+                            <span class="prompt-symbol"> </span>
+                            <span class="text-success">--- REVIEW DOCUMENT GENERATED SUCCESSFULLY ---</span>
+                        </div>
+                    </div>
+
+                    <!-- Sync Captions -->
+                    <div class="captions-overlay" id="captions-box">
+                        Initializing simulated session...
+                    </div>
+
+                    <!-- Controls bar -->
+                    <div class="player-controls">
+                        <button class="control-btn" id="play-pause-btn" aria-label="Play/Pause">
+                            <svg id="play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <svg id="pause-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                            </svg>
+                        </button>
+                        
+                        <button class="control-btn" id="reset-btn" aria-label="Restart">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                            </svg>
+                        </button>
+
+                        <div class="timeline-container">
+                            <input type="range" min="0" max="100" value="0" class="timeline-slider" id="progress-bar">
+                        </div>
+
+                        <div class="time-counter" id="timer-display">00:00</div>
+
+                        <div class="volume-control">
+                            <button class="control-btn" id="mute-btn" aria-label="Mute/Unmute" style="padding:0; width:auto; height:auto; display:flex; align-items:center;">
+                                <svg id="volume-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                                </svg>
+                                <svg id="mute-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                                    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                                </svg>
+                            </button>
+                            <input type="range" min="0" max="100" value="80" class="volume-slider" id="volume-bar" aria-label="Volume">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapters Drawer -->
+                <div class="player-chapters-panel">
+                    <div class="chapters-header">
+                        Chapters <span>5 Tracks</span>
+                    </div>
+                    <ul class="chapters-list">
+                        <li class="chapter-item active" data-step="0" id="ch-1">
+                            <div class="chapter-info">
+                                <span class="chapter-number">01. Setup & Install</span>
+                                <span class="chapter-title">Launch Extension Expart</span>
+                            </div>
+                            <span class="chapter-duration">00:00</span>
+                        </li>
+                        <li class="chapter-item" data-step="3" id="ch-2">
+                            <div class="chapter-info">
+                                <span class="chapter-number">02. Naming Audit</span>
+                                <span class="chapter-title">Trademark Compliance</span>
+                            </div>
+                            <span class="chapter-duration">00:45</span>
+                        </li>
+                        <li class="chapter-item" data-step="10" id="ch-3">
+                            <div class="chapter-info">
+                                <span class="chapter-number">03. Visual Rules</span>
+                                <span class="chapter-title">Icon Padding & Promo Tiles</span>
+                            </div>
+                            <span class="chapter-duration">01:30</span>
+                        </li>
+                        <li class="chapter-item" data-step="13" id="ch-4">
+                            <div class="chapter-info">
+                                <span class="chapter-number">04. Code Checklist</span>
+                                <span class="chapter-title">MV3 & BFCache Checks</span>
+                            </div>
+                            <span class="chapter-duration">02:15</span>
+                        </li>
+                        <li class="chapter-item" data-step="16" id="ch-5">
+                            <div class="chapter-info">
+                                <span class="chapter-number">05. Summary</span>
+                                <span class="chapter-title">Consolidated Listing Report</span>
+                            </div>
+                            <span class="chapter-duration">03:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section class="features-section" id="features">
+            <div class="section-headline">
+                <h2>Key Capabilities</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card card-red" id="feat-trademark">
+                    <div class="feature-icon-geom"></div>
+                    <div>
+                        <h3>Trademark Safety</h3>
+                        <p>Automatically flags name configurations that violate strict Google Store trademarks. Suggests compatible naming configurations (e.g. "for Chrome™" suffix).</p>
+                    </div>
+                </div>
+
+                <div class="feature-card card-blue" id="feat-precision">
+                    <div class="feature-icon-geom"></div>
+                    <div>
+                        <h3>Visual Precision</h3>
+                        <p>Generates architectural graphical specs for your listing icon (16px outer transparent padding, 96x96 pixels artwork) and promo cards to block quick rejections.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card card-yellow" id="feat-seo">
+                    <div class="feature-icon-geom"></div>
+                    <div>
+                        <h3>SEO Listing Optimization</h3>
+                        <p>Crafts descriptive titles, feature-driven descriptions, and strict 132-character summaries optimized for organic store discoverability without text keyword spamming.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card card-pink" id="feat-branding">
+                    <div class="feature-icon-geom"></div>
+                    <div>
+                        <h3>Branded Installation</h3>
+                        <p>Features an integrated colored text CLI logo displayed automatically upon NPM extension download, establishing professional project consistency.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card card-green" id="feat-lifecycle">
+                    <div class="feature-icon-geom"></div>
+                    <div>
+                        <h3>Lifecycle Control</h3>
+                        <p>Detailed architectural guidance for publishing store updates, executing gradual rollouts, rolling back in emergency failures, and appeals workflows.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card card-cyan" id="feat-audit">
+                    <div class="feature-icon-geom"></div>
+                    <div>
+                        <h3>Pre-Submission Audits</h3>
+                        <p>Scans project files for critical store review issues: Manifest V3 configurations, BFCache support (no 'unload' listeners), and Privacy disclosures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTALLATION SECTION -->
+        <section class="installation-section" id="installation">
+            <div class="showcase-title-area">
+                <h2>Installation Guide</h2>
+                <p>Deploy this skill to your Gemini workspace scope globally or locally using simple NPM commands.</p>
+            </div>
+
+            <div class="grid-installation">
+                <div class="install-col-left">
+                    <div class="install-step-card">
+                        <div class="install-step-num">01</div>
+                        <div class="install-step-content">
+                            <h3>Install NPM Extension (Global)</h3>
+                            <p>Retrieve the skill package from the CLI registry globally to apply it to any workspace.</p>
+                            <div class="cmd-block">
+                                <span id="cmd-text-1">gemini extensions install extention-expart</span>
+                                <button class="copy-trigger" onclick="copyCode('cmd-text-1')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="install-step-card">
+                        <div class="install-step-num">02</div>
+                        <div class="install-step-content">
+                            <h3>Manual Repository Installation</h3>
+                            <p>Clone the repository files locally and scope the skill directly to your development project.</p>
+                            <div class="cmd-block" style="margin-bottom:1rem;">
+                                <span id="cmd-text-2">git clone https://github.com/ex-ex.git</span>
+                                <button class="copy-trigger" onclick="copyCode('cmd-text-2')">Copy</button>
+                            </div>
+                            <div class="cmd-block">
+                                <span id="cmd-text-3">gemini extensions install ./ex-ex --scope workspace</span>
+                                <button class="copy-trigger" onclick="copyCode('cmd-text-3')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="install-col-right">
+                    <div class="logo-terminal-showcase">
+                        <div class="terminal-header" style="margin-bottom:0;">
+                            <div class="terminal-dots">
+                                <div class="dot dot-red"></div>
+                                <div class="dot dot-yellow"></div>
+                                <div class="dot dot-green"></div>
+                            </div>
+                            <div>Branded Welcome Script</div>
+                        </div>
+                        <div class="logo-text-art" style="color:var(--bauhaus-red);">
+ > EXTENTION EXPART
+                        </div>
+                        <div class="logo-text-art" style="color:#d1d5db; font-size:0.8rem; border-top: 1px solid #2d3139; padding-top:10px;">
+Successfully installed Extention Expart!
+
+Run "/skills reload" in your Gemini CLI to activate.
+Ready to optimize listings and trademark compliance.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPLIANCE CATALOG SECTION -->
+        <section class="compliance-section" id="compliance">
+            <div class="section-headline">
+                <h2>The Compliance Catalog</h2>
+            </div>
+
+            <div class="catalog-container">
+                <!-- Tabs Navigation -->
+                <div class="catalog-tabs">
+                    <button class="tab-btn active" onclick="switchTab(event, 'tab-text')" id="btn-text">01. Text Regulations</button>
+                    <button class="tab-btn" onclick="switchTab(event, 'tab-graphics')" id="btn-graphics">02. Graphical Standards</button>
+                    <button class="tab-btn" onclick="switchTab(event, 'tab-lifecycle')" id="btn-lifecycle">03. Review Board & Appeals</button>
+                </div>
+
+                <!-- Tab 1: Text -->
+                <div class="catalog-content-panel active" id="tab-text">
+                    <div class="catalog-grid">
+                        <div class="catalog-col catalog-col-blue">
+                            <h3>Store Title</h3>
+                            <ul class="catalog-list">
+                                <li>
+                                    <strong>Descriptive & Unique</strong>
+                                    Clear title capturing core capability. No keyword packing.
+                                </li>
+                                <li>
+                                    <strong>Trademark Safe</strong>
+                                    No direct prefixing with "Google" or "Chrome".
+                                </li>
+                                <li>
+                                    <strong>Length Limits</strong>
+                                    Keep titles concise, brief, and memorable.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="catalog-col catalog-col-red">
+                            <h3>Store Summary</h3>
+                            <ul class="catalog-list">
+                                <li>
+                                    <strong>&lt; 132 Characters</strong>
+                                    Strict limit. Displayed on home screen and search results.
+                                </li>
+                                <li>
+                                    <strong>Resonant Hooks</strong>
+                                    Focus on audience benefits and core features.
+                                </li>
+                                <li>
+                                    <strong>No Superlatives</strong>
+                                    Avoid "best ever", "fastest", "greatest", or competitor tags.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="catalog-col catalog-col-yellow">
+                            <h3>Item Description</h3>
+                            <ul class="catalog-list">
+                                <li>
+                                    <strong>Structured Flow</strong>
+                                    Single overview paragraph followed by a short bulleted list of features.
+                                </li>
+                                <li>
+                                    <strong>Attribution Clauses</strong>
+                                    Provide full legal attributions for trademarks used at the bottom.
+                                </li>
+                                <li>
+                                    <strong>No spamming</strong>
+                                    Avoid repetitive keyword listings. Keep focus on real features.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Graphics -->
+                <div class="catalog-content-panel" id="tab-graphics">
+                    <div class="catalog-grid">
+                        <div class="catalog-col catalog-col-blue">
+                            <h3>Extension Icon</h3>
+                            <ul class="catalog-list">
+                                <li>
+                                    <strong>128x128 Pixels (PNG)</strong>
+                                    Standard resolution size. Include alpha channel to prevent rounded boxes.
+                                </li>
+                                <li>
+                                    <strong>16px Border Padding</strong>
+                                    Artwork must sit inside a 96x96 bounds. Transparent edges required.
+                                </li>
+                                <li>
+                                    <strong>Front-Facing Design</strong>
+                                    Flat perspective. Avoid heavy dynamic tilts or UI components in artwork.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="catalog-col catalog-col-red">
+                            <h3>Screenshots (1-5)</h3>
+                            <ul class="catalog-list">
+                                <li>
+                                    <strong>1280x800 or 640x400</strong>
+                                    Specs strictly checked. High-resolution PNG format.
+                                </li>
+                                <li>
+                                    <strong>Full Bleed Layouts</strong>
+                                    Do not include borders or edge padding. Use sharp corners.
+                                </li>
+                                <li>
+                                    <strong>Core UX Display</strong>
+                                    Demonstrate actual features, minimal text, and high readability.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="catalog-col catalog-col-yellow">
+                            <h3>Promotional Tiles</h3>
+                            <ul class="catalog-list">
+                                <li>
+                                    <strong>Small Promo (440x280)</strong>
+                                    Strictly REQUIRED for any Web Store listing feature.
+                                </li>
+                                <li>
+                                    <strong>Marquee (1400x560)</strong>
+                                    Used for high-profile rotating carousel listings.
+                                </li>
+                                <li>
+                                    <strong>Zero Text Rule</strong>
+                                    Avoid text overlays. Use high contrast, saturation, and clean lines.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Lifecycle -->
+                <div class="catalog-content-panel" id="tab-lifecycle">
+                    <div class="catalog-grid">
+                        <div class="catalog-col catalog-col-blue">
+                            <h3>Review Timings</h3>
+                            <ul class="catalog-list">
+                                <li>
+                                    <strong>Standard Windows</strong>
+                                    Takes between a few days to 2-3 weeks depending on permission scope.
+                                </li>
+                                <li>
+                                    <strong>Permission impact</strong>
+                                    Broad permissions (e.g. &lt;all_urls&gt;, storage) extend checking windows.
+                                </li>
+                                <li>
+                                    <strong>Submission Cancels</strong>
+                                    Cancel reviews up to 6 times per day if bugs are discovered early.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="catalog-col catalog-col-red">
+                            <h3>Review Outcomes</h3>
+                            <ul class="catalog-list">
+                                <li>
+                                    <strong>Warnings (7-30 Days)</strong>
+                                    Granted for minor infractions. Fix within windows to avoid takedown.
+                                </li>
+                                <li>
+                                    <strong>Store Takedown</strong>
+                                    Immediate extraction from listing due to moderate/severe violations.
+                                </li>
+                                <li>
+                                    <strong>Malware Disables</strong>
+                                    Egregious violations disable installed extensions directly on client systems.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="catalog-col catalog-col-yellow">
+                            <h3>Appeals Protocol</h3>
+                            <ul class="catalog-list">
+                                <li>
+                                    <strong>Dashboard Appeals</strong>
+                                    Use the 'Appeal' action directly from the Item Detail dashboard screen.
+                                </li>
+                                <li>
+                                    <strong>Trader Disclosures</strong>
+                                    Required for EU-facing entities. EU P2B regulations provide appeal pathways.
+                                </li>
+                                <li>
+                                    <strong>Minimal Scoping</strong>
+                                    Reduce requests to the narrowest functional scope to secure fast approvals.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="main-footer">
+            <div>
+                <h4>Extension Expart</h4>
+                <p style="margin-bottom:1.5rem; line-height:1.6;">Automating compliant listings, trademark checks, and review preparations using agentic CLI skill models.</p>
+                <div class="logo-block block-red" style="width:30px; height:30px; border-radius:50%;"></div>
+            </div>
+            <div>
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#compliance">Trademark Guidelines</a></li>
+                    <li><a href="#compliance">Visual Assets Policy</a></li>
+                    <li><a href="#compliance">Lifecycle & Appeals</a></li>
+                    <li><a href="https://developer.chrome.com/docs/webstore" target="_blank" rel="noopener">Official Web Store Docs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Built With</h4>
+                <p style="line-height:1.6;">Designed for the Chrome Extension developer community using Google Gemini CLI Skills.</p>
+                <p style="margin-top:1rem; font-family:var(--font-mono); font-size:0.8rem;">Platform Version: v1.0.0-Bauhaus</p>
+            </div>
+
+            <div class="footer-copyright">
+                <div>© 2026 Extension Expart. All Rights Reserved.</div>
+                <div>Form Follows Function — Bauhaus Style Guide</div>
+            </div>
+        </footer>
+
+    </main>
+</div>
+
+<!-- TOAST NOTIFICATION CONTAINER -->
+<div id="toast-notification">Copied to clipboard!</div>
+
+<!-- --- INTERACTIVE SCRIPTS --- -->
+<script>
+    // --- BAUHAUS AUDIO SYNTHESIZER ---
+    class BauhausAudioSynth {
+        constructor() {
+            this.ctx = null;
+            this.masterVolume = 0.8;
+            this.isMuted = false;
+        }
+
+        init() {
+            if (!this.ctx) {
+                // Initialize browser AudioContext on first user action to comply with autoplay policy
+                this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (this.ctx.state === 'suspended') {
+                this.ctx.resume();
+            }
+        }
+
+        setVolume(value) {
+            this.masterVolume = parseFloat(value);
+        }
+
+        playStart() {
+            this.init();
+            if (this.isMuted || this.masterVolume === 0) return;
+
+            const now = this.ctx.currentTime;
+            const osc1 = this.ctx.createOscillator();
+            const osc2 = this.ctx.createOscillator();
+            const gainNode = this.ctx.createGain();
+
+            osc1.type = 'sine';
+            osc1.frequency.setValueAtTime(220, now); // A3
+            osc1.frequency.exponentialRampToValueAtTime(440, now + 0.3); // ascend sweep
+
+            osc2.type = 'triangle';
+            osc2.frequency.setValueAtTime(330, now); // E4
+            osc2.frequency.exponentialRampToValueAtTime(660, now + 0.3);
+
+            gainNode.gain.setValueAtTime(0, now);
+            gainNode.gain.linearRampToValueAtTime(0.18 * this.masterVolume, now + 0.05);
+            gainNode.gain.exponentialRampToValueAtTime(0.0001, now + 0.5);
+
+            osc1.connect(gainNode);
+            osc2.connect(gainNode);
+            gainNode.connect(this.ctx.destination);
+
+            osc1.start(now);
+            osc2.start(now);
+            osc1.stop(now + 0.5);
+            osc2.stop(now + 0.5);
+        }
+
+        playClick() {
+            this.init();
+            if (this.isMuted || this.masterVolume === 0) return;
+
+            const now = this.ctx.currentTime;
+            
+            // Synthesize click sound via noise buffer
+            const bufferSize = this.ctx.sampleRate * 0.02; // 20ms duration
+            const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+
+            const noiseSource = this.ctx.createBufferSource();
+            noiseSource.buffer = buffer;
+
+            const filter = this.ctx.createBiquadFilter();
+            filter.type = 'bandpass';
+            filter.frequency.value = 1400; // tactile typing sound range
+            filter.Q.value = 4;
+
+            const gainNode = this.ctx.createGain();
+            gainNode.gain.setValueAtTime(0.05 * this.masterVolume, now);
+            gainNode.gain.exponentialRampToValueAtTime(0.0001, now + 0.02);
+
+            noiseSource.connect(filter);
+            filter.connect(gainNode);
+            gainNode.connect(this.ctx.destination);
+
+            noiseSource.start(now);
+            noiseSource.stop(now + 0.02);
+        }
+
+        playWarning() {
+            this.init();
+            if (this.isMuted || this.masterVolume === 0) return;
+
+            const now = this.ctx.currentTime;
+            
+            const beep = (time, freq) => {
+                const osc = this.ctx.createOscillator();
+                const filter = this.ctx.createBiquadFilter();
+                const gainNode = this.ctx.createGain();
+
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(freq, time);
+
+                filter.type = 'lowpass';
+                filter.frequency.value = 650;
+
+                gainNode.gain.setValueAtTime(0, time);
+                gainNode.gain.linearRampToValueAtTime(0.12 * this.masterVolume, time + 0.02);
+                gainNode.gain.exponentialRampToValueAtTime(0.0001, time + 0.15);
+
+                osc.connect(filter);
+                filter.connect(gainNode);
+                gainNode.connect(this.ctx.destination);
+
+                osc.start(time);
+                osc.stop(time + 0.2);
+            };
+
+            beep(now, 440); // A4
+            beep(now + 0.12, 349.23); // F4
+        }
+
+        playSuccess() {
+            this.init();
+            if (this.isMuted || this.masterVolume === 0) return;
+
+            const now = this.ctx.currentTime;
+            
+            const chime = (time, freq, decay) => {
+                const osc = this.ctx.createOscillator();
+                const gainNode = this.ctx.createGain();
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, time);
+
+                gainNode.gain.setValueAtTime(0, time);
+                gainNode.gain.linearRampToValueAtTime(0.15 * this.masterVolume, time + 0.03);
+                gainNode.gain.exponentialRampToValueAtTime(0.0001, time + decay);
+
+                osc.connect(gainNode);
+                gainNode.connect(this.ctx.destination);
+
+                osc.start(time);
+                osc.stop(time + decay);
+            };
+
+            chime(now, 523.25, 0.35); // C5
+            chime(now + 0.08, 659.25, 0.35); // E5
+            chime(now + 0.16, 783.99, 0.45); // G5
+        }
+    }
+
+    const synth = new BauhausAudioSynth();
+
+    // Chapter step values representing terminal lines counts
+    const chapters = {
+        0: 0,   // Chapter 1: Setup & Install (Lines 0 to 2)
+        1: 3,   // Chapter 2: Naming Audit (Lines 3 to 9)
+        2: 10,  // Chapter 3: Visual Rules (Lines 10 to 12)
+        3: 13,  // Chapter 4: Code Checklist (Lines 13 to 15)
+        4: 16   // Chapter 5: Summary (Lines 16)
+    };
+
+    const chapterLines = [0, 3, 10, 13, 16];
+
+    // Subtitles corresponding to terminal lines
+    const subtitles = [
+        "Initializing installation of Extension Expart local skill package...",
+        "Scanning extension manifest parameters from configuration metadata...",
+        "Success! Extension Expart successfully compiled and scope registered.",
+        "Executing target listing audit request to prepare store submissions...",
+        "Analyzing project source files: manifest.json, background.js, popup.html.",
+        "Scanning trademark compliance checks against global regulations...",
+        "Trademark Warning! Detected direct prefixing violation in title...",
+        "Resolving trademark guidelines: Prefix marks must use appropriate compatible suffixes.",
+        "Generating compatible trademark name: 'Session Manager for Google Chrome™'",
+        "Auditing graphical asset configurations against dimensional rules...",
+        "Validating extension icon format: size 128x128, artwork bounds 96x96, 16px transparent padding.",
+        "Graphical asset audit: Passed all bounds checks successfully.",
+        "Auditing lifecycle parameters and Manifest V3 compatibility...",
+        "Manifest V3 checks: Verified service worker registry and absent unload handlers.",
+        "Reviewing security criteria and required Privacy Disclosures...",
+        "Packaging consolidated review document reports...",
+        "Consolidated store listing document prepared successfully! Ready to deploy."
+    ];
+
+    let currentLine = 0;
+    let isPlaying = false;
+    let playInterval = null;
+
+    const playPosterBtn = document.getElementById('play-poster-btn');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const playerPoster = document.getElementById('player-poster');
+    const progressBar = document.getElementById('progress-bar');
+    const timerDisplay = document.getElementById('timer-display');
+    const captionsBox = document.getElementById('captions-box');
+    const playIcon = document.getElementById('play-icon');
+    const pauseIcon = document.getElementById('pause-icon');
+    const terminalScreen = document.getElementById('terminal-screen');
+    const volumeBar = document.getElementById('volume-bar');
+    const muteBtn = document.getElementById('mute-btn');
+    const volumeIcon = document.getElementById('volume-icon');
+    const muteIcon = document.getElementById('mute-icon');
+
+    // Init: Hide terminal lines
+    const linesCount = 17;
+    
+    function resetTerminal() {
+        for(let i=0; i<linesCount; i++) {
+            const line = document.getElementById(`line-${i}`);
+            if (line) line.classList.remove('active');
+        }
+        currentLine = 0;
+        progressBar.value = 0;
+        timerDisplay.textContent = "00:00";
+        captionsBox.style.display = "none";
+        updateActiveChapter(0);
+    }
+
+    function showLine(index) {
+        if(index < 0 || index >= linesCount) return;
+        const line = document.getElementById(`line-${index}`);
+        if(line) {
+            line.classList.add('active');
+            // scroll terminal to keep it visible
+            terminalScreen.scrollTop = line.offsetTop - 50;
+        }
+
+        // Trigger dynamic synthesizer audio feedback based on command line events
+        if (index === 7) {
+            synth.playWarning(); // Double beep alarm for warning details
+        } else if ([2, 9, 12, 14, 16].includes(index)) {
+            synth.playSuccess(); // Bright resonant major chime for validation milestone accomplishments
+        } else {
+            synth.playClick(); // Soft typewriter keystroke clicking sound for standard prompt details
+        }
+        
+        // Show captions
+        captionsBox.style.display = "block";
+        captionsBox.textContent = subtitles[index];
+
+        // Update progress bar
+        const percent = Math.floor((index / (linesCount - 1)) * 100);
+        progressBar.value = percent;
+
+        // Update timer
+        const totalDuration = 180; // 3 minutes total
+        const currentSeconds = Math.floor((index / (linesCount - 1)) * totalDuration);
+        const mins = String(Math.floor(currentSeconds / 60)).padStart(2, '0');
+        const secs = String(currentSeconds % 60).padStart(2, '0');
+        timerDisplay.textContent = `${mins}:${secs}`;
+
+        // Check active chapter bounds
+        for(let i = chapterLines.length - 1; i >= 0; i--) {
+            if(index >= chapterLines[i]) {
+                updateActiveChapter(i);
+                break;
+            }
+        }
+    }
+
+    function updateActiveChapter(chapIndex) {
+        const items = document.querySelectorAll('.chapter-item');
+        items.forEach((item, idx) => {
+            if(idx === chapIndex) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+
+    function togglePlay() {
+        if(isPlaying) {
+            pauseVideo();
+        } else {
+            playVideo();
+        }
+    }
+
+    function playVideo() {
+        isPlaying = true;
+        playerPoster.style.opacity = '0';
+        setTimeout(() => { playerPoster.style.display = 'none'; }, 500);
+        
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+
+        if(currentLine >= linesCount) {
+            resetTerminal();
+        }
+
+        // Play visual start sound effect sweep
+        synth.playStart();
+
+        playInterval = setInterval(() => {
+            if(currentLine < linesCount) {
+                showLine(currentLine);
+                currentLine++;
+            } else {
+                pauseVideo();
+            }
+        }, 1800); // Step every 1.8 seconds
+    }
+
+    function pauseVideo() {
+        isPlaying = false;
+        clearInterval(playInterval);
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+    }
+
+    // Event Listeners
+    playPosterBtn.addEventListener('click', () => {
+        playVideo();
+    });
+
+    playPauseBtn.addEventListener('click', togglePlay);
+
+    resetBtn.addEventListener('click', () => {
+        pauseVideo();
+        resetTerminal();
+        playerPoster.style.display = 'flex';
+        playerPoster.style.opacity = '1';
+    });
+
+    // Chapters Navigation Click
+    document.querySelectorAll('.chapter-item').forEach((item, idx) => {
+        item.addEventListener('click', () => {
+            const startLine = parseInt(item.getAttribute('data-step'));
+            
+            // Hide poster
+            playerPoster.style.opacity = '0';
+            playerPoster.style.display = 'none';
+
+            pauseVideo();
+            
+            // Activate all lines up to startLine
+            for(let i=0; i<linesCount; i++) {
+                const line = document.getElementById(`line-${i}`);
+                if(i <= startLine) {
+                    line.classList.add('active');
+                } else {
+                    line.classList.remove('active');
+                }
+            }
+            
+            currentLine = startLine;
+            showLine(currentLine);
+            currentLine++; // move to next for play
+            
+            playVideo();
+        });
+    });
+
+    // Timeline drag control
+    progressBar.addEventListener('input', (e) => {
+        const percent = parseInt(e.target.value);
+        const targetLine = Math.floor((percent / 100) * (linesCount - 1));
+        
+        playerPoster.style.opacity = '0';
+        playerPoster.style.display = 'none';
+        pauseVideo();
+
+        for(let i=0; i<linesCount; i++) {
+            const line = document.getElementById(`line-${i}`);
+            if(i <= targetLine) {
+                line.classList.add('active');
+            } else {
+                line.classList.remove('active');
+            }
+        }
+        currentLine = targetLine;
+        showLine(currentLine);
+        currentLine++;
+    });
+
+    // Volume and Mute control wiring
+    volumeBar.addEventListener('input', (e) => {
+        const val = e.target.value;
+        synth.setVolume(val / 100);
+        if (val === "0") {
+            synth.isMuted = true;
+            volumeIcon.style.display = 'none';
+            muteIcon.style.display = 'block';
+        } else {
+            synth.isMuted = false;
+            volumeIcon.style.display = 'block';
+            muteIcon.style.display = 'none';
+        }
+        synth.playClick(); // Play instant micro click feedback
+    });
+
+    muteBtn.addEventListener('click', () => {
+        synth.isMuted = !synth.isMuted;
+        if (synth.isMuted) {
+            volumeIcon.style.display = 'none';
+            muteIcon.style.display = 'block';
+            volumeBar.value = 0;
+        } else {
+            volumeIcon.style.display = 'block';
+            muteIcon.style.display = 'none';
+            volumeBar.value = synth.masterVolume * 100 || 80;
+        }
+        synth.playClick();
+    });
+
+    // --- TAB SWITCHER LOGIC ---
+    function switchTab(evt, tabId) {
+        const contents = document.querySelectorAll('.catalog-content-panel');
+        contents.forEach(content => content.classList.remove('active'));
+
+        const tabs = document.querySelectorAll('.tab-btn');
+        tabs.forEach(tab => tab.classList.remove('active'));
+
+        document.getElementById(tabId).classList.add('active');
+        evt.currentTarget.classList.add('active');
+    }
+
+    // --- COPY CODE LOGIC ---
+    function copyCode(elementId) {
+        const text = document.getElementById(elementId).textContent;
+        navigator.clipboard.writeText(text).then(() => {
+            const toast = document.getElementById('toast-notification');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    }
+
+    // Initialize Page
+    resetTerminal();
+</script>
+</body>
+</html>
